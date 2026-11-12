@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="CrowdPeek">
+  <path fill="#1d3a5f" d="M16 2.5a11 11 0 0 0-11 11c0 8 11 16 11 16s11-8 11-16a11 11 0 0 0-11-11Zm0 15.2a4.2 4.2 0 1 1 0-8.4 4.2 4.2 0 0 1 0 8.4Z"/>
+  <path fill="#1f8a5b" d="M16 10.1a3.4 3.4 0 1 0 0 6.8 3.4 3.4 0 0 0 0-6.8Z"/>
+  <style>@media(prefers-color-scheme:dark){path:first-child{fill:#a9c5e8}}</style>
+</svg>

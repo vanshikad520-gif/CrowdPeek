@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f6f8">
+  <title>Places in Chandigarh | CrowdPeek</title>
+  <link rel="icon" type="image/svg+xml" href="img/logo-mark.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link href="css/app.css" rel="stylesheet">
+  <script type="module" src="js/config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+  <script type="module" src="js/home.js"></script>
+</head>
+<body>
+  <div id="site-nav"></div>
+  <main class="container app-container page-content">
+    <header class="page-header">
+      <h1>Chandigarh, right now</h1>
+      <p>A quick look at how busy the city’s favorite places are.</p>
+    </header>
+    <section id="summary-strip" class="summary-strip" aria-label="Crowd summary"></section>
+    <section aria-label="Find and sort places" class="toolbar">
+      <div>
+        <label class="visually-hidden" for="place-search">Search by place name or sector</label>
+        <input class="form-control" id="place-search" type="search" placeholder="Search by name or sector" autocomplete="off">
+      </div>
+      <div>
+        <label class="visually-hidden" for="place-sort">Sort places</label>
+        <select class="form-select" id="place-sort">
+          <option value="quietest">Quietest first</option>
+          <option value="busiest">Busiest first</option>
+          <option value="name">Name A-Z</option>
+        </select>
+      </div>
+    </section>
+    <div id="category-chips" class="category-chips" role="group" aria-label="Filter by category"></div>
+    <div class="places-toolbar">
+      <div class="view-toggle" role="group" aria-label="Places view">
+        <button id="list-view-button" class="view-toggle-button is-selected" type="button" aria-pressed="true">List</button>
+        <button id="map-view-button" class="view-toggle-button" type="button" aria-pressed="false">Map</button>
+      </div>
+      <button id="near-me-button" class="btn btn-outline-primary" type="button">Near me</button>
+    </div>
+    <p id="location-message" class="inline-message d-none" role="status" aria-live="polite"></p>
+    <p id="result-count" class="result-count" aria-live="polite"></p>
+    <div id="places-state" class="view-state" role="status" aria-live="polite">Loading places…</div>
+    <div id="places-list" class="place-list d-none" aria-label="Places"></div>
+    <section id="map-view" class="map-view d-none" aria-label="Map of places">
+      <div class="map-layout">
+        <div class="map-column">
+          <div id="places-map" class="places-map" aria-label="Map showing CrowdPeek places"></div>
+          <section class="panel map-search-panel" aria-labelledby="map-search-heading">
+            <h2 id="map-search-heading">Search any place</h2>
+            <form id="map-search-form" class="map-search-form">
+              <label class="visually-hidden" for="map-place-query">Place name or address</label>
+              <input id="map-place-query" class="form-control" type="search" placeholder="Search a place or address" autocomplete="off" required>
+              <button id="map-search-button" class="btn btn-primary" type="submit">Search</button>
+            </form>
+            <p class="map-search-attribution">Search results from OpenStreetMap.</p>
+            <p id="map-search-status" class="inline-message d-none" role="status" aria-live="polite"></p>
+            <div id="map-search-results" class="map-search-results"></div>
+          </section>
+        </div>
+        <aside id="osm-place-details" class="panel osm-details d-none" aria-live="polite"></aside>
+      </div>
+    </section>
+  </main>
+  <div id="toast-root" class="toast-container position-fixed bottom-0 end-0 p-3" aria-live="polite" aria-atomic="true"></div>
+  <div id="site-footer"></div>
+</body>
+</html>
