@@ -1,1 +1,1 @@
-export const REQUIRE_LOCATION_FOR_REPORTS = true;
+export const REQUIRE_LOCATION_FOR_REPORTS = false;
